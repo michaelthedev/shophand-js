@@ -206,6 +206,8 @@
 		let choice = Math.floor(Math.random() * 3) + 1;
         if (choice === 2) {
             cart.applyDiscount(10);
+		} else if (choice === 3) {
+            cart.applyDiscount(100, true);
 		}
         console.log(cart);
         // cart.checkout();
