@@ -156,11 +156,12 @@ class Cart
         this.total = this.subtotal;
     }
 
-    applyDiscount(discount, percentage = true)
+    applyDiscount(discount, isAmount = true)
     {
-        let discountAmount = this.subtotal * (percentage ? (discount/100) : discount);
+        let discountAmount = isAmount ? discount : (this.subtotal * (discount/100));
         this.discount = discountAmount;
         this.total = this.subtotal - discountAmount;
+        return this;
     }
 
     getSubTotal()
